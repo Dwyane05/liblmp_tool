@@ -13,8 +13,6 @@
 #include "copyable.h"
 #include "Common.h"
 
-#include <boost/operators.hpp>
-
 namespace lmp_tool
 {
 
@@ -24,9 +22,7 @@ namespace lmp_tool
 /// This class is immutable.
 /// It's recommended to pass it by value, since it's passed in register on x64.
 ///
-class Timestamp : public lmp_tool::copyable,
-                  public boost::equality_comparable<Timestamp>,
-                  public boost::less_than_comparable<Timestamp>
+class Timestamp : public lmp_tool::copyable
 {
  public:
   ///
