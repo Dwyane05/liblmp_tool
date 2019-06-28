@@ -55,6 +55,9 @@ void logInThread()
 int main()
 {
   getppid(); // for ltrace and strace
+  lmp_tool::TimeZone tz("/usr/share/zoneinfo/Asia/Shanghai");
+  lmp_tool::Logger::setTimeZone(tz);
+
 
   lmp_tool::ThreadPool pool("pool");
   pool.start(5);
