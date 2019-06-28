@@ -8,13 +8,9 @@ const int kMonthsOfYear = 12;
 
 int isLeapYear(int year)
 {
-  if (year % 400 == 0)
-    return 1;
-  else if (year % 100 == 0)
-    return 0;
-  else if (year % 4 == 0)
-    return 1;
-  else
+    if ((year % 400 == 0) || (year%4==0 && year%100!=0) )
+        return 1;
+
     return 0;
 }
 
@@ -55,10 +51,12 @@ int main()
   int julianDayNumber = 2415021;
   int weekDay = 1; // Monday
 
-  for (int year = 1900; year < 2500; ++year)
+  int year = 0;
+  for ( year = 1900; year < 2500; ++year)
   {
     assert(Date(year, 3, 1).julianDayNumber() - Date(year, 2, 29).julianDayNumber()
-           == isLeapYear(year));
+           == isLeapYear(year) );
+
     for (int month = 1; month <= kMonthsOfYear; ++month)
     {
       for (int day = 1; day <= daysOfMonth(year, month); ++day)
@@ -83,6 +81,7 @@ int main()
       }
     }
   }
-  printf("All passed.\n");
+  if( year >= 2500 )
+    printf("All passed.\n");
 }
 
