@@ -24,8 +24,8 @@ void benchmark()
   {
     stamps.push_back(Timestamp::now());
   }
-  printf("%s\n", stamps.front().toString().c_str());
-  printf("%s\n", stamps.back().toString().c_str());
+  printf("%s\n", stamps.front().toFormattedString(false).c_str());
+  printf("%s\n", stamps.back().toFormattedString(false).c_str());
   printf("%f\n", timeDifference(stamps.back(), stamps.front()));
 
   int increments[100] = { 0 };
@@ -59,6 +59,8 @@ int main()
 {
   Timestamp now(Timestamp::now());
   printf("%s\n", now.toString().c_str());
+  printf("%s\n", now.toFormattedString(false).c_str());
+
   passByValue(now);
   passByConstReference(now);
   benchmark();

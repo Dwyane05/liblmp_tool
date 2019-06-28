@@ -13,9 +13,6 @@ target_link_libraries(blockingqueue_test lmp_tool)
 add_executable(blockingqueue_bench BlockingQueue_bench.cc)
 target_link_libraries(blockingqueue_bench lmp_tool)
 
-add_executable(boundedblockingqueue_test BoundedBlockingQueue_test.cc)
-target_link_libraries(boundedblockingqueue_test lmp_tool)
-
 add_executable(date_unittest Date_unittest.cc)
 target_link_libraries(date_unittest lmp_tool)
 add_test(NAME date_unittest COMMAND date_unittest)

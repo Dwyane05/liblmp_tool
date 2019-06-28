@@ -78,7 +78,7 @@ struct ThreadData
     latch_->countDown();
     latch_ = NULL;
 
-    lmp_tool::CurrentThread::t_threadName = name_.empty() ? "muduoThread" : name_.c_str();
+    lmp_tool::CurrentThread::t_threadName = name_.empty() ? "lmp_toolThread" : name_.c_str();
     ::prctl(PR_SET_NAME, lmp_tool::CurrentThread::t_threadName);
     try
     {

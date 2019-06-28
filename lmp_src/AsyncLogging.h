@@ -10,8 +10,6 @@
 #ifndef LMP_TOOL_ASYNCLOGGING_H
 #define LMP_TOOL_ASYNCLOGGING_H
 
-#include "BlockingQueue.h"
-#include "BoundedBlockingQueue.h"
 #include "CountDownLatch.h"
 #include "Mutex.h"
 #include "Thread.h"

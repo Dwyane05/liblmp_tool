@@ -37,7 +37,8 @@ string Timestamp::toFormattedString(bool showMicroseconds) const
   char buf[64] = {0};
   time_t seconds = static_cast<time_t>(microSecondsSinceEpoch_ / kMicroSecondsPerSecond);
   struct tm tm_time;
-  gmtime_r(&seconds, &tm_time);
+//  gmtime_r(&seconds, &tm_time);  //time lag 8 hours in Zhengzhou
+  localtime_r(&seconds, &tm_time);
 
   if (showMicroseconds)
   {
